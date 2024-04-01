@@ -1,15 +1,33 @@
 * {
     box-sizing: border-box;
+    font-family: "Pixelify Sans", sans-serif;
+}
+
+html {
+    height: 100%;
+} 
+
+body {
     margin: 0;
-    padding: 0;
-    font-family: "Pixelify Sans", sans-serif
+    background-color: #0D262D;
+    color: #fff;
+    height: 100%;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
 }
 
 [flappy] {
     position: relative;
     border: 5px solid dodgerblue;
-    height: 100vh; 
-    width: 100vw; 
+    height: 700px;
+    width: 1200px;
+    margin: 15px;
     background-color: deepskyblue;
     overflow: hidden;
 }
@@ -20,7 +38,7 @@
     left: calc(50% - 30px);
 }
 
-.pair-of-barriers {
+.par-de-barreiras {
     position: absolute;
     top: 0;
     height: 100%;
@@ -29,20 +47,20 @@
     justify-content: space-between;
 }
 
-.barrier {
+.barreira {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.barrier .border {
+.barreira .borda {
     height: 30px;
     width: 130px;
     background: linear-gradient(90deg, #639301, #A5E82E);
     border: 2px solid #000;
 }
 
-.barrier .body {
+.barreira .corpo {
     height: 150px;
     width: 110px;
     background: linear-gradient(90deg, #639301, #A5E82E);
@@ -50,11 +68,11 @@
     border-right: 2px solid #000;
 }
 
-.progress {
+.progresso {
     position: absolute;
     top: 10px;
     right: 10px;
-    font-family: Pixel;
+    font-family: "Pixelify Sans", sans-serif;
     font-size: 70px;
     z-index: 100;
 }
