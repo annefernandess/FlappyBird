@@ -15,4 +15,4 @@ Divirta-se jogando!
 Para executar o jogo localmente, basta clonar este repositório e abrir o arquivo `index.html` em seu navegador da web.
 
 ```bash
-git clone https://github.com/seu-nome-de-usuario/clone-flappy-bird.git
+git clone https://github.com/annefernandess/FlappyBird.git
