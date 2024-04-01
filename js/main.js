@@ -15,10 +15,6 @@ function Barreira(reversa = false) {
     this.setAltura = altura => corpo.style.height = `${altura}px`
 }
 
-// const b = new Barreira(true)
-// b.setAltura(300)
-// document.querySelector('[flappy]').appendChild(b.elemento)
-
 function ParDeBarreiras(altura, abertura, x) {
     this.elemento = novoElemento('div', 'par-de-barreiras')
 
@@ -43,8 +39,6 @@ function ParDeBarreiras(altura, abertura, x) {
     this.setX(x)
 }
 
-// const b = new ParDeBarreiras(700, 200, 800)
-// document.querySelector('[flappy]').appendChild(b.elemento)
 
 function Barreiras(altura, largura, abertura, espaco, notificarPonto) {
     this.pares = [
@@ -101,8 +95,6 @@ function Passaro(alturaJogo) {
     this.setY(alturaJogo / 2)
 }
 
-
-
 function Progresso() {
     this.elemento = novoElemento('span', 'progresso')
     this.atualizarPontos = pontos => {
@@ -110,17 +102,6 @@ function Progresso() {
     }
     this.atualizarPontos(0)
 }
-
-// const barreiras = new Barreiras(700, 1200, 200, 400)
-// const passaro = new Passaro(700)
-// const areaDoJogo = document.querySelector('[flappy]')
-// areaDoJogo.appendChild(passaro.elemento)
-// areaDoJogo.appendChild(new Progresso().elemento)
-// barreiras.pares.forEach(par => areaDoJogo.appendChild(par.elemento))
-// setInterval(() => {
-//     barreiras.animar()
-//     passaro.animar()
-// }, 20)
 
 function estaoSobrepostos(elementoA, elementoB) {
     const a = elementoA.getBoundingClientRect()
@@ -148,6 +129,8 @@ function colidiu(passaro, barreiras) {
 
 function FlappyBird() {
     let pontos = 0
+    let isPaused = false;
+    let gameTimer;
 
     const areaDoJogo = document.querySelector('[flappy]')
     const altura = areaDoJogo.clientHeight
@@ -162,16 +145,33 @@ function FlappyBird() {
     areaDoJogo.appendChild(passaro.elemento)
     barreiras.pares.forEach(par => areaDoJogo.appendChild(par.elemento))
 
-    this.start = () => {
-        // loop do jogo
-        const temporizador = setInterval(() => {
-            barreiras.animar()
-            passaro.animar()
+    playPauseButton.addEventListener('click', () => {
+        if (isPaused) {
+            isPaused = false;
+            playPauseButton.textContent = 'Pause';
+            startGame();
+        } else {
+            isPaused = true;
+            playPauseButton.textContent = 'Play';
+            clearInterval(gameTimer);
+        }
+    });
 
-            if (colidiu(passaro, barreiras)) {
-                clearInterval(temporizador)
+    function startGame() {
+        gameTimer = setInterval(() => {
+            if (!isPaused) {
+                barreiras.animar();
+                passaro.animar();
+
+                if (colidiu(passaro, barreiras)) {
+                    clearInterval(gameTimer);
+                }
             }
-        }, 20)
+        }, 20);
+    }
+
+    this.start = () => {
+        startGame();
     }
 }
 
