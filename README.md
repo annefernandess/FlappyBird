@@ -6,7 +6,7 @@ Este repositório contém uma implementação simples do clássico jogo Flappy B
 
 - **Iniciando o Jogo:** Clique no botão "Play" para iniciar o jogo.
 - **Controlando o Pássaro:** Para mover o pássaro para cima, basta clicar em qualquer tecla do teclado.
-- **Colisões:** Se o pássaro colidir com obstáculos ou atingir o chão, o jogo reiniciará automaticamente.
+- **Colisões:** Se o pássaro colidir com obstáculos, o jogo reiniciará automaticamente. 
 
 ## Começando
 
