@@ -157,14 +157,6 @@ function FlappyBird() {
         }
     });
 
-    function startOnKeyPress() {
-        if (isPaused) {
-            isPaused = false;
-            playPauseButton.textContent = 'Pause';
-            startGame();
-        }
-    }
-    window.addEventListener('keydown', startOnKeyPress);
 
     function startGame() {
         gameTimer = setInterval(() => {
@@ -186,4 +178,3 @@ function FlappyBird() {
 document.addEventListener('DOMContentLoaded', () => {
     new FlappyBird();
 });
-// new FlappyBird().startGame();
