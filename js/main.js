@@ -53,7 +53,6 @@ function Barreiras(altura, largura, abertura, espaco, notificarPonto) {
         this.pares.forEach(par => {
             par.setX(par.getX() - deslocamento)
 
-            // quando o elemento sair da área do jogo
             if (par.getX() < -par.getLargura()) {
                 par.setX(par.getX() + espaco * this.pares.length)
                 par.sortearAbertura()
@@ -164,7 +163,6 @@ function FlappyBird() {
             passaro.animar();
 
             if (colidiu(passaro, barreiras)) {
-                // Recarrega a página após uma colisão
                 setTimeout(() => {
                     location.reload();
                 }, 100);
