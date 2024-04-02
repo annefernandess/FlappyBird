@@ -148,7 +148,7 @@ function FlappyBird() {
         if (!gameTimer || isPaused) {
             isPaused = false;
             playPauseButton.textContent = 'Pause';
-            startGame();
+            this.start();
         } else {
             isPaused = true;
             playPauseButton.textContent = 'Play';
@@ -157,10 +157,10 @@ function FlappyBird() {
     });
 
 
-    function startGame() {
-        gameTimer = setInterval(() => {
-            barreiras.animar();
-            passaro.animar();
+    this.start = () => {
+         gameTimer = setInterval(() => {
+            barreiras.animar()
+            passaro.animar()
 
             if (colidiu(passaro, barreiras)) {
                 setTimeout(() => {
