@@ -1,16 +1,16 @@
 # FlappyBird
 
-Este repositório contém uma implementação simples do clássico jogo Flappy Bird usando apenas HTML, CSS e JavaScript. Criado com a orientação de um instrutor de curso, este projeto serve como um exercício de aprendizado para desenvolvimento web.
+This repository contains a simple implementation of the classic Flappy Bird game using only HTML, CSS, and JavaScript. Created under the guidance of a course instructor, this project serves as a learning exercise for web development.
 
-## Como Jogar
+## How to Play
 
-- **Iniciando o Jogo:** Clique no botão "Play" para iniciar o jogo.
-- **Controlando o Pássaro:** Para mover o pássaro para cima, basta clicar em qualquer tecla do teclado.
-- **Colisões:** Se o pássaro colidir com obstáculos, o jogo reiniciará automaticamente. 
+- **Starting the Game:** Click the "Play" button to start the game.
+- **Controlling the Bird:** To move the bird upwards, just press any key on the keyboard.
 
-## Começando
+## Getting Started
 
-Para executar o jogo localmente, basta clonar este repositório e abrir o arquivo `index.html` em seu navegador da web.
+To run the game locally, simply clone this repository and open the `index.html` file in your web browser.
 
 ```bash
 git clone https://github.com/annefernandess/FlappyBird.git
+
